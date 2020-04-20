@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  role_name: steamcmd
+  author: Damien Plénard
+  description: Install the Steam command line client
+  license: MIT
+  min_ansible_version: 2.4
+  platforms:
+    - name: Debian
+    - name: RedHat
+    - name: Ubuntu
+  galaxy_tags:
+    - steamcmd
+dependencies: []
