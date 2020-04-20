@@ -1,0 +1,5 @@
+---
+__steamcmd_manual: True
+__steamcmd_required_packages:
+  - glibc.i686
+  - libstdc++.i686

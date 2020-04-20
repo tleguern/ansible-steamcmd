@@ -1,0 +1,7 @@
+---
+__steamcmd_manual: False
+__steamcmd_package: steamcmd
+__steamcmd_deb_mirror: http://archive.ubuntu.com/ubuntu/
+__steamcmd_repositories: multiverse
+__steamcmd_required_packages:
+  - lib32gcc1
