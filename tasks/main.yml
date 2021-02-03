@@ -4,8 +4,59 @@
     - '{{ ansible_distribution }}.yml'
     - '{{ ansible_os_family }}.yml'
 
+- name: Execute OS-specific tasks.
+  include_tasks: install-{{ ansible_os_family }}.yml
+  when:
+    - not steamcmd_manual
+
 - name: Ensure steam user exists
   user:
     name: "{{ steamcmd_user }}"
 
-- include: install.yml
+- name: Ensure steamcmd directory is installed
+  file:
+    path: "{{ item }}"
+    state: directory
+    recurse: yes
+  with_items:
+    - "{{ steamcmd_lib_path }}"
+    - "{{ steamcmd_bin_path }}"
+  when:
+    - steamcmd_manual
+
+- name: Ensure required packages are installed
+  package:
+    name: "{{ steamcmd_required_packages }}"
+    state: present
+
+- name: Ensure steamcmd is installed
+  package:
+    name: "{{ steamcmd_package }}"
+    state: present
+  when:
+    - not steamcmd_manual
+
+- name: Download SteamCMD for Linux
+  get_url:
+    url: "{{ steamcmd_download_url }}"
+    dest: '/tmp/steamcmd_linux.tar.gz'
+    force: yes
+  when:
+    - steamcmd_manual
+
+- name: Extract SteamCMD
+  unarchive:
+    src: '/tmp/steamcmd_linux.tar.gz'
+    dest: "{{ steamcmd_lib_path }}"
+    copy: no
+  when:
+    - steamcmd_manual
+
+- name: Setup SteamCMD bin symlink
+  file:
+    path: "{{ steamcmd_bin_path }}/steamcmd"
+    src: "{{ steamcmd_lib_path }}/linux32/steamcmd"
+    state: link
+    force: yes
+  when:
+    - steamcmd_manual

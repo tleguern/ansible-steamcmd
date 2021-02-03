@@ -1,0 +1,34 @@
+---
+- name: Debian - Ensure non-free Debian repository is enabled
+  apt_repository:
+    repo: deb {{ steamcmd_deb_mirror }} {{ ansible_distribution_release }} {{ steamcmd_repositories }}
+    state: present
+  register: update_apt
+
+- name: Debian - Ensure architecture i386 is enabled
+  command: dpkg --add-architecture i386
+  when:
+    - ansible_userspace_architecture == "x86_64"
+  register: update_arch
+  changed_when: false
+
+- name: Debian - Update package list
+  apt:
+    update_cache: yes
+  when:
+    - update_apt is defined
+    - update_apt.changed
+
+- name: Debian - Interactive step one
+  debconf:
+    name: steamcmd
+    question: steam/question
+    value: 'I AGREE'
+    vtype: select
+
+- name: Debian - Interactive step two
+  debconf:
+    name: steamcmd
+    question: steam/license
+    value: ''
+    vtype: note
