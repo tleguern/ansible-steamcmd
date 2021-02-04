@@ -2,6 +2,8 @@
 
 An Ansible role that installs steamcmd on a Linux server.
 
+Automatic testing is provided using molecule's delegated driver and https://builds.sr.ht.
+
 ## Requirements
 
 None.
@@ -87,6 +89,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+## Contributing
+
+Either send [send GitHub pull requests](https://github.com/Aversiste/ansible-steamcmd) or [send patches on SourceHut](https://lists.sr.ht/~tleguern/misc).
 
 # Author Information
 
