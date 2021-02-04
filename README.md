@@ -1,5 +1,7 @@
 # Ansible Role: steamcmd
 
+[![builds.sr.ht status](https://builds.sr.ht/~tleguern/ansible-steamcmd.svg)](https://builds.sr.ht/~tleguern/ansible-steamcmd?)
+
 An Ansible role that installs steamcmd on a Linux server.
 
 Automatic testing is provided using molecule's delegated driver and https://builds.sr.ht.
