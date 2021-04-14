@@ -4,7 +4,7 @@
 
 An Ansible role that installs steamcmd on a Linux server.
 
-Automatic testing is provided using molecule's delegated driver and https://builds.sr.ht.
+Automatic testing is provided using molecule's delegated driver and <https://builds.sr.ht>.
 
 ## Requirements
 
@@ -54,11 +54,11 @@ None.
 | `__steamcmd_repositories` | `multiverse` |
 | `__steamcmd_required_packages` | `lib32gcc1` |
 
-# Dependencies
+## Dependencies
 
 None
 
-# Example Playbook
+## Example Playbook
 
 ```yaml
 - hosts: game
@@ -66,7 +66,7 @@ None
   - ansible-steamcmd
 ```
 
-# License
+## License
 
 ```
 The MIT License (MIT)
@@ -96,6 +96,6 @@ SOFTWARE.
 
 Either send [send GitHub pull requests](https://github.com/Aversiste/ansible-steamcmd) or [send patches on SourceHut](https://lists.sr.ht/~tleguern/misc).
 
-# Author Information
+## Author Information
 
 Original work from [Damien Plénard](https://gitlab.com/dam0un/ansible-steamcmd) with adaptations from Tristan Le Guern.
