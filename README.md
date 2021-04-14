@@ -94,7 +94,7 @@ SOFTWARE.
 
 ## Contributing
 
-Either send [send GitHub pull requests](https://github.com/Aversiste/ansible-steamcmd) or [send patches on SourceHut](https://lists.sr.ht/~tleguern/misc).
+Either send [send GitHub pull requests](https://github.com/tleguern/ansible-steamcmd) or [send patches on SourceHut](https://lists.sr.ht/~tleguern/misc).
 
 ## Author Information
 
