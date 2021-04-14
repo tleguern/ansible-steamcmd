@@ -8,4 +8,3 @@
     - name: "Include ansible-steamcmd"
       include_role:
         name: "ansible-steamcmd"
-
