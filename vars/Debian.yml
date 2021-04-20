@@ -1,5 +1,5 @@
 ---
-__steamcmd_manual: False
+__steamcmd_manual: false
 __steamcmd_package: steamcmd
 __steamcmd_deb_mirror: https://deb.debian.org/debian/
 __steamcmd_repositories: contrib non-free

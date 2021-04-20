@@ -1,5 +1,5 @@
 ---
-__steamcmd_manual: False
+__steamcmd_manual: false
 __steamcmd_package: steamcmd
 __steamcmd_deb_mirror: http://archive.ubuntu.com/ubuntu/
 __steamcmd_repositories: multiverse
