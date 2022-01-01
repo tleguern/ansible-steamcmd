@@ -1,0 +1,18 @@
+image: debian/bullseye
+packages:
+  - python3
+  - python3-pip
+  - python3-wheel
+  - python3-setuptools
+sources:
+  - https://git.sr.ht/~tleguern/ansible-steamcmd
+environment:
+  PATH: "/bin:/usr/bin/:/usr/local/bin:/home/build/.local/bin"
+tasks:
+  - pip: |
+      python3 -m pip install -qU pip
+      python3 -m pip install -q ansible
+      python3 -m pip install -q molecule==3.2.4
+  - molecule: |
+      cd ansible-steamcmd
+      molecule test -s debian-bullseye

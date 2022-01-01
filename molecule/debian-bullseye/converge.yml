@@ -1,0 +1,10 @@
+---
+- name: Converge
+  hosts: all
+  become: yes
+  become_user: root
+  become_method: sudo
+  tasks:
+    - name: "Include ansible-steamcmd"
+      include_role:
+        name: "ansible-steamcmd"

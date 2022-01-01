@@ -24,7 +24,7 @@ None.
 | `steamcmd_deb_mirror` | URL of an APT mirror | `{{ __steamcmd_deb_mirror }}` |
 | `steamcmd_repositories` | APT repositories to enable | `{{ __steamcmd_repositories }}`
 
-### Debian
+### Debian buster
 
 | Variable | Default |
 |----------|---------|
@@ -33,6 +33,17 @@ None.
 | `__steamcmd_deb_mirror` | `https://deb.debian.org/debian/` |
 | `__steamcmd_repositories` | `contrib non-free` |
 | `__steamcmd_required_packages` | `lib32gcc1` |
+
+### Debian bullseye
+
+| Variable | Default |
+|----------|---------|
+| `__steamcmd_manual` | `False` |
+| `__steamcmd_package` | `steamcmd` |
+| `__steamcmd_deb_mirror` | `https://deb.debian.org/debian/` |
+| `__steamcmd_repositories` | `contrib non-free` |
+| `__steamcmd_required_packages` | `lib32gcc1` |
+
 
 ### RedHat
 
