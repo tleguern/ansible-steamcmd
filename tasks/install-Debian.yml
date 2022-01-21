@@ -32,3 +32,8 @@
     question: steam/license
     value: ''
     vtype: note
+
+- name: Debian - Ensure steamcmd is installed
+  package:
+    name: "{{ steamcmd_package }}"
+    state: present

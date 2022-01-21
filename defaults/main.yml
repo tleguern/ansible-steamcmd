@@ -1,12 +1,10 @@
 ---
 steamcmd_download_url: https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
-steamcmd_bin_path: /usr/local/games
-steamcmd_lib_path: /usr/local/lib/games/steam
 steamcmd_user: steam
 
-steamcmd_manual: "{{ __steamcmd_manual }}"
 steamcmd_required_packages: "{{ __steamcmd_required_packages }}"
 
+steamcmd_bin: "{{ __steamcmd_bin }}"
 steamcmd_package: "{{ __steamcmd_package | default(omit) }}"
 steamcmd_deb_mirror: "{{ __steamcmd_deb_mirror | default(omit) }}"
 steamcmd_repositories: "{{ __steamcmd_repositories | default(omit) }}"

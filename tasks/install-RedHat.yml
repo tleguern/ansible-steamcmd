@@ -1,0 +1,28 @@
+---
+- name: RedHat - Ensure steamcmd directories exists
+  file:
+    path: "{{ item }}"
+    state: directory
+    recurse: yes
+  loop:
+    - "{{ __steamcmd_lib_path }}"
+    - "{{ __steamcmd_bin_path }}"
+
+- name: RedHat - Download SteamCMD for Linux
+  get_url:
+    url: "{{ steamcmd_download_url }}"
+    dest: '/tmp/steamcmd_linux.tar.gz'
+    force: yes
+
+- name: RedHat - Extract SteamCMD
+  unarchive:
+    src: '/tmp/steamcmd_linux.tar.gz'
+    dest: "{{ __steamcmd_lib_path }}"
+    copy: no
+
+- name: RedHat - Setup SteamCMD bin symlink
+  file:
+    path: "{{ __steamcmd_bin_path }}/steamcmd"
+    src: "{{ __steamcmd_lib_path }}/linux32/steamcmd"
+    state: link
+    force: yes

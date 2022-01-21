@@ -1,5 +1,7 @@
 ---
-__steamcmd_manual: true
 __steamcmd_required_packages:
   - glibc.i686
   - libstdc++.i686
+__steamcmd_bin_path: /usr/local/games
+__steamcmd_lib_path: /usr/local/lib/games/steam
+__steamcmd_bin: "{{ __steamcmd_bin_path }}/steamcmd"

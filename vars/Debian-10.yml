@@ -1,7 +1,7 @@
 ---
-__steamcmd_manual: false
 __steamcmd_package: steamcmd
 __steamcmd_deb_mirror: https://deb.debian.org/debian/
 __steamcmd_repositories: contrib non-free
 __steamcmd_required_packages:
   - lib32gcc1
+__steamcmd_bin: /usr/games/steamcmd
