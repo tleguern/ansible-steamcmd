@@ -4,4 +4,5 @@ __steamcmd_deb_mirror: http://archive.ubuntu.com/ubuntu/
 __steamcmd_repositories: multiverse
 __steamcmd_required_packages:
   - lib32gcc1
+  - acl
 __steamcmd_bin: /usr/games/steamcmd
