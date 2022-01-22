@@ -15,10 +15,7 @@ None.
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `steamcmd_download_url` | URL pointing to the steamcmd archive | `https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz` |
-| `steamcmd_bin_path` | Installation directory of steamcmd, when `steamcmd_manual=True` | `/usr/local/games` |
-| `steamcmd_lib_path` | Intermediate installation directory of steamcmd, when `steamcmd_manual=True` |
 | `steamcmd_user` | User name for steamcmd | `steam` |
-| `steamcmd_manual` | Prefer manual installation | `{{ __steamcmd_manual }}` |
 | `steamcmd_required_packages` | Dependencies | `{{ __steamcmd_required_packages }}` |
 | `steamcmd_package` | Name of package | `{{ __steamcmd_package }}` |
 | `steamcmd_deb_mirror` | URL of an APT mirror | `{{ __steamcmd_deb_mirror }}` |
@@ -28,7 +25,7 @@ None.
 
 | Variable | Default |
 |----------|---------|
-| `__steamcmd_manual` | `False` |
+| `__steamcmd_bin` | `/usr/games/steamcmd` |
 | `__steamcmd_package` | `steamcmd` |
 | `__steamcmd_deb_mirror` | `https://deb.debian.org/debian/` |
 | `__steamcmd_repositories` | `contrib non-free` |
@@ -38,28 +35,26 @@ None.
 
 | Variable | Default |
 |----------|---------|
-| `__steamcmd_manual` | `False` |
+| `__steamcmd_bin` | `/usr/games/steamcmd` |
 | `__steamcmd_package` | `steamcmd` |
 | `__steamcmd_deb_mirror` | `https://deb.debian.org/debian/` |
 | `__steamcmd_repositories` | `contrib non-free` |
 | `__steamcmd_required_packages` | `lib32gcc1` |
 
-
 ### RedHat
 
 | Variable | Default |
 |----------|---------|
-| `__steamcmd_manual` | `True` |
+| `__steamcmd_bin` | `{{ __steamcmd_bin_path }}/steamcmd` |
 | `__steamcmd_required_packages` | `[ 'glibc.i686', 'libstdc++.i686' ]` |
+| `__steamcmd_bin_path` | Installation directory of steamcmd | `/usr/local/games` |
+| `__steamcmd_lib_path` | Intermediate installation directory of steamcmd |
 
 ### Ubuntu
 
 | Variable | Default |
 |----------|---------|
-
-| Variable | Default |
-|----------|---------|
-| `__steamcmd_manual` | `False` |
+| `__steamcmd_bin` | `/usr/games/steamcmd` |
 | `__steamcmd_package` | `steamcmd` |
 | `__steamcmd_deb_mirror` | `http://archive.ubuntu.com/ubuntu/` |
 | `__steamcmd_repositories` | `multiverse` |
@@ -74,7 +69,7 @@ None
 ```yaml
 - hosts: game
   roles:
-  - ansible-steamcmd
+    - ansible-steamcmd
 ```
 
 ## License
